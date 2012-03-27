@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">Pin-android-user-auth-prototype</string>
+    <string name="now_loading">正在载入…</string>
+    <string name="app_version">0.0.9 pre</string>
+    <string name="app_authenticate_exception">用户身份验证错误</string>
+    <string name="app_unknown_exception">程序执行错误</string>
+    <!-- 登录页面 -->
+    <string name="login_email">邮箱</string>
+    <string name="login_password">密码</string>
+    <string name="login_login">登录</string>
+    <string name="login_email_valid_blank">请输入邮箱</string>
+    <string name="login_password_valid_blank">请输入密码</string>
+    <string name="login_now_login">正在登录…</string>
+    <string name="menu_logout">登出</string>
+</resources>

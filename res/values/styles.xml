@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.mindpin" parent="@android:Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@color/mindpin_bgc</item>
+        <item name="android:listViewStyle">@style/mindpin_list_theme</item>
+    </style>
+
+    <!-- 主题公共元素 -->
+    <style name="mindpin_list_theme" parent="@android:style/Widget.ListView.White">
+        <item name="android:smoothScrollbar">true</item>
+        <item name="android:fastScrollEnabled">true</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:listSelector">@android:drawable/list_selector_background</item>
+        <item name="android:background">@color/mindpin_bgc</item>
+    </style>
+
+    <!-- 以下为其他 -->
+    <style name="body">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <!-- base_loading_layout -->
+    <style name="loading_layout_text">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- title_bar -->
+    <style name="head_bar">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/title_bar_bg</item>
+    </style>
+
+    <style name="head_bar_text">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginLeft">9dp</item>
+    </style>
+
+    <!-- main -->
+    <style name="main">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <!-- base_login_layout -->
+    <style name="login_layout_inputer">
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/login_inputer_background</item>
+    </style>
+
+    <style name="login_layout_button" parent="@style/login_layout_inputer">
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <!-- mindpin自定义的 progress_dialog 用于 正在登录 等场合 -->
+    <style name="mindpin_progress_dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item> <!-- 标题栏 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item> <!-- 自身浮动 -->
+        <item name="android:backgroundDimEnabled">false</item> <!-- 半透明的背景遮罩 -->
+        <item name="android:windowBackground">@android:color/transparent</item> <!-- 无背景 -->
+
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@drawable/mindpin_process_dialog_background</item>
+    </style>
+
+    <style name="head_bar_user_avatar">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginLeft">9dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="head_bar_button">
+        <item name="android:background">@drawable/bg_button_head_bar</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+    </style>
+
+    <style name="head_bar_button_right" parent="@style/head_bar_button">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">9dp</item>
+    </style>
+
+</resources>
