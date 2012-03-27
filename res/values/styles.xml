@@ -64,8 +64,24 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/login_inputer_background</item>
     </style>
+    
+    <!-- base_signup_layout -->
+    <style name="signup_layout_inputer">
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/signup_inputer_background</item>
+    </style>
 
     <style name="login_layout_button" parent="@style/login_layout_inputer">
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+    
+    <style name="signup_layout_button" parent="@style/login_layout_inputer">
         <item name="android:background">@drawable/bg_button</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:layout_marginTop">5dp</item>

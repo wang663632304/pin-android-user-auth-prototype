@@ -20,6 +20,7 @@ import org.apache.http.protocol.HTTP;
 
 import com.mindpin.logic.AccountManager;
 import com.mindpin.logic.AccountManager.AuthenticateException;
+import com.mindpin.logic.AccountManager.UnprocessableEntityException;
 import com.mindpin.model.base.CookieHelper;
 
 public abstract class MindpinHttpRequest<TResult> {
@@ -59,6 +60,8 @@ public abstract class MindpinHttpRequest<TResult> {
 		switch(status_code){
 		case HttpStatus.SC_OK:
 			return on_success(responst_text);
+		case HttpStatus.SC_UNPROCESSABLE_ENTITY:
+		    throw new UnprocessableEntityException(responst_text);
 		case HttpStatus.SC_UNAUTHORIZED:
 			on_authenticate_exception();
 			throw new AuthenticateException(); //抛出未登录异常，会被 MindpinRunnable 接到并处理

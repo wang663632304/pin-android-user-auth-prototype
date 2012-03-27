@@ -22,7 +22,8 @@
 	        
 	    <activity android:name=".activity.auth.LoginActivity" android:windowSoftInputMode="stateVisible"></activity>
 	    <activity android:name=".activity.auth.MainActivity"></activity>
-        
+      <activity android:name=".activity.auth.SignupActivity"></activity>
+      
     </application>
     
     <uses-permission android:name="android.permission.INTERNET"/>

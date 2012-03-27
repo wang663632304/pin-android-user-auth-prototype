@@ -80,4 +80,18 @@ public class AccountManager {
 	public static class AuthenticateException extends Exception {
 		private static final long serialVersionUID = 8741487079704426464L;
 	}
+	
+	public static class UnprocessableEntityException extends Exception {
+        private static final long serialVersionUID = 1L;
+        private String message;
+        
+        public UnprocessableEntityException(String message) {
+            this.message = message;
+        }
+        
+        @Override
+        public String getMessage() {
+            return this.message;
+        }
+	}
 }

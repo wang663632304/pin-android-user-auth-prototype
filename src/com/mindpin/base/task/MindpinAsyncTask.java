@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.mindpin.R;
 import com.mindpin.logic.AccountManager.AuthenticateException;
+import com.mindpin.logic.AccountManager.UnprocessableEntityException;
 import com.mindpin.base.activity.MindpinBaseActivity;
 import com.mindpin.base.utils.BaseUtils;
 import com.mindpin.base.widget.MindpinProgressDialog;
@@ -14,6 +15,7 @@ public abstract class MindpinAsyncTask<TParams, TProgress, TResult> {
 	
 	public static final int SUCCESS = 200;
 	public static final int AUTHENTICATE_EXCEPTION = 9003;
+	public static final int UNPROCESSABLE_ENTITY_EXCEPTION = 9004;
 	public static final int UNKNOWN_EXCEPTION = 9099;
 	
 	
@@ -46,6 +48,14 @@ public abstract class MindpinAsyncTask<TParams, TProgress, TResult> {
 				return AUTHENTICATE_EXCEPTION;
 			} 
 			
+			catch(UnprocessableEntityException e){
+			    // 请求 422
+			    Log.e("MindpinAsyncTask","请求 422");
+			    e.printStackTrace();
+			    unprocessable_entity_message = e.getMessage();
+			    return UNPROCESSABLE_ENTITY_EXCEPTION;
+			}
+			
 			catch (Exception e){
 			    // 程序执行错误
 				Log.e("MindpinAsyncTask","程序执行错误");
@@ -66,6 +76,9 @@ public abstract class MindpinAsyncTask<TParams, TProgress, TResult> {
 				    // 用户身份验证错误
 					___authenticate_exception();
 					break;
+				case UNPROCESSABLE_ENTITY_EXCEPTION:
+				    ___on_unprocessable_entity(unprocessable_entity_message);
+				    break;
 				case UNKNOWN_EXCEPTION:
 				    // 程序执行错误
 					___unknown_exception();
@@ -113,6 +126,10 @@ public abstract class MindpinAsyncTask<TParams, TProgress, TResult> {
 				progress_dialog.dismiss();
 			}
 		}
+		
+	    public void ___on_unprocessable_entity(String message){
+	        BaseUtils.toast(message);
+	    };
 	}
 	
 	
@@ -122,6 +139,7 @@ public abstract class MindpinAsyncTask<TParams, TProgress, TResult> {
 	
 	private InnerTask inner_task = null;
 	private TResult inner_task_result = null;
+	private String unprocessable_entity_message = "";
 	
 	// 一般构造器，什么都不用传
 	public MindpinAsyncTask(){

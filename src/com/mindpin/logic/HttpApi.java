@@ -15,6 +15,7 @@ public class HttpApi {
 	
     // 各种路径常量
 	public static final String 用户登录				= "/login";
+	public static final String 用户注册                = "/signup_submit";
 	
 	
     // LoginActivity
@@ -34,6 +35,24 @@ public class HttpApi {
 			}
 		}.go();
 	}
+	
+	public static boolean user_signup(String email, String name, String password) throws Exception {
+        return new MindpinPostRequest<Boolean>(
+                用户注册, 
+            new BasicNameValuePair("user[email]", email),
+            new BasicNameValuePair("user[name]", name),
+            new BasicNameValuePair("user[password]", password),
+            new BasicNameValuePair("user[password_confirmation]", password)
+        ){
+            @Override
+            public Boolean on_success(String response_text) throws Exception{
+                JSONObject json = new JSONObject(response_text);
+                String user_info = ((JSONObject)json.get("user")).toString();
+                AccountManager.login(get_cookies(), user_info);
+                return true;
+            }
+        }.go();
+    }
 	
 	public static InputStream download_image(String image_url) {
 		try {
@@ -55,5 +74,6 @@ public class HttpApi {
 	public static class IntentException extends Exception{
 		private static final long serialVersionUID = -4969746083422993611L;
 	}
+
 
 }

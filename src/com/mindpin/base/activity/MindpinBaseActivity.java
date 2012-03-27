@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import com.mindpin.activity.auth.LoginActivity;
+import com.mindpin.activity.auth.MainActivity;
 import com.mindpin.cache.image.ImageCache;
 import com.mindpin.logic.AccountManager;
 import com.mindpin.model.AccountUser;
@@ -30,6 +31,12 @@ abstract public class MindpinBaseActivity extends Activity {
 		ActivitiesStackSingleton.clear_activities_stack();
 		open_activity(LoginActivity.class);
 	}
+	
+	// 关闭所有activity，并重新打开 main
+    final public void restart_to_main(){
+        ActivitiesStackSingleton.clear_activities_stack();
+        open_activity(MainActivity.class);
+    }
 
 	// 绑定在顶栏 go_back 按钮上的事件处理
 	final public void go_back(View view) {
