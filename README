@@ -1,0 +1,5 @@
+该工程是针对 pin-stories 服务的 android 客户端的原型工程，已经包括用户登陆和注册
+ 
+开发注意事项
+开发时需要修改 assets/config.properties 文件中的 SITE 配置
+修改成你启动的 pin-stories 的服务地址

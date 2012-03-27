@@ -2,8 +2,10 @@ package com.mindpin.activity.auth;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import com.mindpin.R;
+import com.mindpin.application.MindpinApplication;
 import com.mindpin.base.activity.MindpinBaseActivity;
 import com.mindpin.base.task.MindpinAsyncTask;
 import com.mindpin.base.utils.BaseUtils;
@@ -17,6 +19,10 @@ public class LoginActivity extends MindpinBaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.base_login);
+        if(!MindpinApplication.has_signup){
+            Button signup_button = (Button)findViewById(R.id.signup_button);
+            signup_button.setVisibility(View.GONE);
+        }
 	}
 	
 	public void login_button_click(View view){

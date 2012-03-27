@@ -3,7 +3,6 @@ package com.mindpin.activity.auth;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-
 import com.mindpin.R;
 import com.mindpin.base.activity.MindpinBaseActivity;
 import com.mindpin.base.task.MindpinAsyncTask;

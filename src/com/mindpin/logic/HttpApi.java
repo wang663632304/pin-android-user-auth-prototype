@@ -6,12 +6,14 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
+
+import com.mindpin.application.MindpinApplication;
 import com.mindpin.base.http.MindpinHttpRequest;
 import com.mindpin.base.http.MindpinPostRequest;
 
 public class HttpApi {
 	
-	public static final String SITE = "http://192.168.1.8:3001";
+	public static final String SITE = MindpinApplication.site;
 	
     // 各种路径常量
 	public static final String 用户登录				= "/login";
